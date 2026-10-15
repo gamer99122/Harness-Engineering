@@ -71,15 +71,20 @@
 
 ## Lesson 0：準備
 
+需要：Python 3.10 以上、已安裝 [Claude Code](https://docs.claude.com/en/docs/claude-code/overview)。
+
 ```bash
-cd ~/Desktop/Code/"Harness Engineering"
-git init && git add -A && git commit -m "初始狀態"   # 建議：之後可以用 git diff 看 Claude 改了什麼
+git clone https://github.com/gamer99122/Harness-Engineering.git
+cd Harness-Engineering
 python3 app/todo.py add "學 Context"
 python3 app/todo.py add "學 MCP"
 python3 app/todo.py add "學 Skill"
 python3 app/todo.py done 1
 claude
 ```
+
+clone 下來就已經是 git repo：之後可以用 `git diff` 看 Claude 改了什麼，改壞了用 `git restore` 復原。
+`todos.json` 在 `.gitignore` 裡，每個人都從空的待辦清單開始。
 
 啟動時 Claude Code 會問你兩件事，**這本身就是 harness 的一部分**：
 - 是否信任這個資料夾（因為 `.claude/settings.json` 裡有 hooks，會執行程式）
